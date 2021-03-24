@@ -1,0 +1,59 @@
+#include <iostream>
+
+class CIndex {
+public :
+	virtual void init() {
+		printf("CIndex 의 init()\n");
+	};
+	virtual void calculate() {
+		printf("CIndex의 calculate()\n");
+	};
+};
+
+class CMa : public CIndex {
+public :
+	virtual void init() {
+		printf("CMa의 init\n");
+	};
+	virtual void calculate() {
+		printf("CMa의 calculate()\n");
+	};
+};
+
+void main() {
+	CIndex *pIndex = new CMa();
+	pIndex->init();
+	pIndex->calculate();
+	delete pIndex;
+}
+
+---------------------------------------------------------------------
+// virtual 뺐을때 
+#include <iostream>
+
+class CIndex {
+public :
+	 void init() {
+		printf("CIndex 의 init()\n");
+	};
+	 void calculate() {
+		printf("CIndex의 calculate()\n");
+	};
+};
+
+class CMa : public CIndex {
+public :
+	 void init() {
+		printf("CMa의 init\n");
+	};
+	 void calculate() {
+		printf("CMa의 calculate()\n");
+	};
+};
+
+void main() {
+	CIndex *pIndex = new CMa();
+	pIndex->init();
+	pIndex->calculate();
+	delete pIndex;
+}
